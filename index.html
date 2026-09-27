@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akpaloo Metal Works – Strong Metalwork. Built to Last.</title>
+  <meta name="description" content="Akpaloo Metal Works – Premium welding, metal fabrication, gates, doors, railings, security grilles, steel structures and custom metalwork in Ghana." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    :root {
+      --charcoal: #0f0f0f;
+      --dark: #141414;
+      --card-bg: #1a1a1a;
+      --border: #2a2a2a;
+      --gold: #d4a017;
+      --gold-light: #f0c040;
+      --orange: #e07b20;
+      --grey: #8a8a8a;
+      --light-grey: #c0c0c0;
+      --white: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--charcoal);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Rajdhani', sans-serif; }
+
+    /* ── PAGE SYSTEM ── */
+    .page { display: none; animation: fadeIn 0.45s ease; }
+    .page.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── NAV ── */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    #navbar.scrolled {
+      background: rgba(14,14,14,0.97);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.7);
+      backdrop-filter: blur(12px);
+    }
+    .nav-link {
+      position: relative; font-weight: 600; font-size: 0.875rem;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--light-grey); cursor: pointer;
+      transition: color 0.25s;
+      padding-bottom: 2px;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+      height: 2px; background: var(--gold);
+      transform: scaleX(0); transition: transform 0.25s;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--white); }
+    .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+
+    /* ── GOLD ACCENT ── */
+    .gold { color: var(--gold); }
+    .gold-bg { background: var(--gold); }
+
+    /* ── GRADIENT TEXT ── */
+    .grad-text {
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--orange) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold);
+      background: rgba(212,160,23,0.1); border: 1px solid rgba(212,160,23,0.25);
+      padding: 6px 14px; border-radius: 4px; margin-bottom: 16px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+      color: #0f0f0f; font-weight: 700; font-size: 0.9rem;
+      letter-spacing: 0.04em; padding: 14px 28px; border-radius: 4px;
+      cursor: pointer; border: none; transition: all 0.3s;
+      text-transform: uppercase;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(212,160,23,0.45);
+    }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--white); font-weight: 700;
+      font-size: 0.9rem; letter-spacing: 0.04em; padding: 13px 28px;
+      border-radius: 4px; cursor: pointer;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      transition: all 0.3s; text-transform: uppercase;
+    }
+    .btn-outline:hover {
+      border-color: var(--gold); color: var(--gold);
+      box-shadow: 0 0 20px rgba(212,160,23,0.15);
+    }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25D366; color: #fff; font-weight: 700;
+      font-size: 0.9rem; padding: 14px 28px; border-radius: 4px;
+      cursor: pointer; border: none; transition: all 0.3s;
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 8px; transition: all 0.35s;
+    }
+    .card:hover { border-color: rgba(212,160,23,0.4); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+    .card-icon {
+      width: 56px; height: 56px; border-radius: 8px;
+      background: linear-gradient(135deg, rgba(212,160,23,0.15), rgba(224,123,32,0.1));
+      border: 1px solid rgba(212,160,23,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; color: var(--gold);
+    }
+
+    /* ── HERO ── */
+    .hero-section {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center;
+      background: var(--charcoal);
+      overflow: hidden;
+      padding: 130px 0 100px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.pexels.com/photos/5846282/pexels-photo-5846282.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1080&w=1920');
+      background-size: cover; background-position: center;
+      filter: brightness(0.2);
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(15,15,15,0.96) 0%, rgba(15,15,15,0.55) 60%, rgba(15,15,15,0.85) 100%);
+    }
+    .hero-glow {
+      position: absolute; top: 40%; left: 0;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,160,23,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .spark {
+      position: absolute; width: 3px; height: 3px; border-radius: 50%;
+      background: var(--gold); opacity: 0;
+      animation: spark-anim linear infinite;
+    }
+    @keyframes spark-anim {
+      0% { opacity: 0; transform: translate(0,0) scale(1); }
+      20% { opacity: 1; }
+      100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.2); }
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(212,160,23,0.12); border: 1px solid rgba(212,160,23,0.3);
+      color: var(--gold); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 8px 16px; border-radius: 50px;
+    }
+    .hero-badge .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gold); animation: pulse 1.8s ease infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+
+    /* ── MARQUEE ── */
+    .marquee-track { display: flex; gap: 48px; animation: marquee 22s linear infinite; white-space: nowrap; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── ABOUT PAGE ACCENT LINE ── */
+    .accent-line { width: 60px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--orange)); border-radius: 2px; }
+
+    /* ── SERVICE CARD ── */
+    .service-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; transition: all 0.35s;
+      position: relative;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: linear-gradient(90deg, var(--gold), var(--orange));
+      transform: scaleX(0); transition: transform 0.35s; transform-origin: left;
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card:hover { border-color: rgba(212,160,23,0.3); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+
+    /* ── GALLERY ── */
+    .gallery-filter-btn {
+      padding: 8px 20px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
+      transition: all 0.25s; border: 1px solid var(--border); background: transparent;
+      color: var(--grey);
+    }
+    .gallery-filter-btn.active, .gallery-filter-btn:hover {
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      color: #0f0f0f; border-color: transparent;
+    }
+    .gallery-item {
+      position: relative; overflow: hidden; border-radius: 8px;
+      background: #1a1a1a; cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.07); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 55%);
+      opacity: 0; transition: opacity 0.35s;
+      display: flex; align-items: flex-end; padding: 20px;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-item.hidden { display: none; }
+
+    /* ── CONTACT ── */
+    .contact-input {
+      width: 100%; background: #1e1e1e; border: 1.5px solid var(--border);
+      border-radius: 6px; padding: 14px 16px; color: var(--white);
+      font-size: 0.9rem; font-family: 'Inter', sans-serif;
+      transition: border-color 0.25s, box-shadow 0.25s; outline: none;
+    }
+    .contact-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(212,160,23,0.12); }
+    .contact-input::placeholder { color: #555; }
+    select.contact-input option { background: #1e1e1e; }
+
+    /* ── FLOATING WHATSAPP ── */
+    #float-wa {
+      position: fixed; bottom: 28px; right: 24px; z-index: 900;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25D366; display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; color: #fff; box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      cursor: pointer; transition: all 0.3s; text-decoration: none;
+      animation: float-bounce 3s ease-in-out infinite;
+    }
+    #float-wa:hover { transform: scale(1.12); box-shadow: 0 8px 32px rgba(37,211,102,0.6); }
+    @keyframes float-bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+    #float-wa .wa-tooltip {
+      position: absolute; right: 70px; top: 50%; transform: translateY(-50%);
+      background: #1a1a1a; color: #fff; font-size: 0.78rem; font-weight: 600;
+      white-space: nowrap; padding: 7px 12px; border-radius: 6px;
+      opacity: 0; pointer-events: none; transition: opacity 0.25s;
+      border: 1px solid var(--border);
+    }
+    #float-wa:hover .wa-tooltip { opacity: 1; }
+
+    /* ── FOOTER ── */
+    footer { background: #0a0a0a; border-top: 1px solid var(--border); }
+    .footer-link { color: var(--grey); font-size: 0.875rem; cursor: pointer; transition: color 0.2s; }
+    .footer-link:hover { color: var(--gold); }
+
+    /* ── DIVIDER ── */
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0; }
+
+    /* ── STATS COUNTER ── */
+    .stat-number { font-family: 'Rajdhani', sans-serif; font-size: 3rem; font-weight: 700; line-height: 1; }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ── MOBILE MENU ── */
+    #mobile-menu {
+      max-height: 0; opacity: 0; pointer-events: none; overflow: hidden;
+      margin-top: 0 !important;
+      transform: translateY(-8px);
+      transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease, transform 0.3s ease;
+    }
+    #mobile-menu.open {
+      max-height: 500px; opacity: 1; pointer-events: all;
+      margin-top: 1rem !important;
+      transform: translateY(0);
+    }
+    #hamburger span { display: block; width: 22px; height: 2px; background: #fff; transition: all 0.3s; }
+    #hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(3px, 3px); }
+    #hamburger.open span:nth-child(2) { opacity: 0; }
+    #hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(3px, -3px); }
+
+    /* ── TOAST ── */
+    #toast {
+      position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: #1a1a1a; border: 1px solid var(--gold); color: #fff;
+      padding: 14px 24px; border-radius: 8px; font-size: 0.875rem; font-weight: 600;
+      z-index: 9999; opacity: 0; transition: all 0.4s;
+      display: flex; align-items: center; gap: 10px;
+    }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ── IMAGE ASPECT RATIOS ── */
+    .aspect-video { aspect-ratio: 16/9; }
+    .aspect-square { aspect-ratio: 1; }
+    .aspect-4\/3 { aspect-ratio: 4/3; }
+    .aspect-3\/4 { aspect-ratio: 3/4; }
+
+    /* ── UTILITY ── */
+    .section-pad { padding: 96px 0; }
+    @media(max-width:768px){ .section-pad { padding: 64px 0; } }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── PROGRESS BAR ── */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; height: 2px; z-index: 9999;
+      background: linear-gradient(90deg, var(--gold), var(--orange));
+      transition: width 0.2s;
+    }
+
+    /* ── BACKGROUND TEXTURE ── */
+    .metal-texture {
+      background-image: repeating-linear-gradient(
+        0deg, transparent, transparent 2px,
+        rgba(255,255,255,0.012) 2px, rgba(255,255,255,0.012) 4px
+      );
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: linear-gradient(135deg, #111 0%, #1a1500 50%, #111 100%);
+      border-top: 1px solid rgba(212,160,23,0.15);
+      border-bottom: 1px solid rgba(212,160,23,0.15);
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(212,160,23,0.06) 0%, transparent 70%);
+    }
+
+    /* ── BENEFIT ITEM ── */
+    .benefit-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 20px; border-radius: 8px;
+      transition: background 0.25s;
+    }
+    .benefit-item:hover { background: rgba(255,255,255,0.03); }
+    .benefit-check {
+      width: 36px; height: 36px; min-width: 36px; border-radius: 50%;
+      background: rgba(212,160,23,0.12); border: 1px solid rgba(212,160,23,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 0.9rem;
+    }
+
+    /* ── NAV LOGO ── */
+    .logo-text { font-family: 'Rajdhani', sans-serif; font-weight: 700; }
+    .logo-accent { color: var(--gold); }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #111; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+    /* ── ABOUT PAGE HERO IMG ── */
+    .about-hero-img {
+      position: relative; border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .about-hero-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom right, transparent 60%, rgba(212,160,23,0.15) 100%);
+    }
+
+    /* ── CONTACT INFO CARD ── */
+    .contact-info-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px; background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 8px; transition: border-color 0.25s;
+    }
+    .contact-info-item:hover { border-color: rgba(212,160,23,0.35); }
+    .contact-icon {
+      width: 44px; height: 44px; min-width: 44px; border-radius: 8px;
+      background: rgba(212,160,23,0.1); border: 1px solid rgba(212,160,23,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1.1rem;
+    }
+
+    /* ── FORM SUCCESS ── */
+    #form-success { display: none; }
+  </style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div id="progress-bar" style="width:0%"></div>
+
+<!-- ══════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════ -->
+<nav id="navbar" class="py-4 px-0">
+  <div class="container">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-3 cursor-pointer" onclick="navigate('home')">
+        <div style="width:40px;height:40px;background:linear-gradient(135deg,#d4a017,#e07b20);border-radius:6px;display:flex;align-items:center;justify-content:center;">
+          <i class="fas fa-tools" style="color:#0f0f0f;font-size:1.1rem;"></i>
+        </div>
+        <div>
+          <div class="logo-text text-white text-lg leading-tight">AKPALOO <span class="logo-accent">METAL</span></div>
+          <div style="font-size:0.6rem;letter-spacing:0.18em;color:#8a8a8a;font-weight:600;text-transform:uppercase;">Works</div>
+        </div>
+      </div>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <span class="nav-link active" onclick="navigate('home')" data-page="home">Home</span>
+        <span class="nav-link" onclick="navigate('about')" data-page="about">About</span>
+        <span class="nav-link" onclick="navigate('services')" data-page="services">Services</span>
+        <span class="nav-link" onclick="navigate('projects')" data-page="projects">Projects</span>
+        <span class="nav-link" onclick="navigate('contact')" data-page="contact">Contact</span>
+        <button class="btn-primary" style="padding:10px 22px;font-size:0.8rem;" onclick="navigate('contact')">
+          <i class="fas fa-paper-plane"></i> Get a Quote
+        </button>
+      </div>
+
+      <!-- Hamburger -->
+      <button id="hamburger" class="flex flex-col gap-1.5 md:hidden" onclick="toggleMenu()" style="background:none;border:none;cursor:pointer;padding:4px;">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden mt-4 rounded-xl overflow-hidden" style="background:rgba(20,20,20,0.98);border:1px solid #2a2a2a;">
+      <div class="p-4 flex flex-col gap-1">
+        <span class="nav-link block py-3 px-4 rounded-lg hover:bg-white/5" onclick="navigate('home');toggleMenu()" data-page="home">Home</span>
+        <span class="nav-link block py-3 px-4 rounded-lg hover:bg-white/5" onclick="navigate('about');toggleMenu()" data-page="about">About</span>
+        <span class="nav-link block py-3 px-4 rounded-lg hover:bg-white/5" onclick="navigate('services');toggleMenu()" data-page="services">Services</span>
+        <span class="nav-link block py-3 px-4 rounded-lg hover:bg-white/5" onclick="navigate('projects');toggleMenu()" data-page="projects">Projects</span>
+        <span class="nav-link block py-3 px-4 rounded-lg hover:bg-white/5" onclick="navigate('contact');toggleMenu()" data-page="contact">Contact</span>
+        <div class="pt-2 border-t" style="border-color:#2a2a2a;">
+          <button class="btn-primary w-full justify-center" onclick="navigate('contact');toggleMenu()">
+            <i class="fas fa-paper-plane"></i> Get a Quote
+           </button>
+        </div>
+       </div>
+     </div>
+   </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     PAGE: HOME
+════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-glow"></div>
+    <!-- Spark particles -->
+    <div id="sparks"></div>
+
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="max-w-3xl">
+        <div class="hero-badge mb-6">
+          <span class="dot"></span>
+          Ghana's Premier Metal Fabrication
+        </div>
+
+        <h1 style="font-size:clamp(3rem,7vw,5.5rem);font-weight:700;line-height:1.05;margin-bottom:24px;">
+          Strong Metalwork.<br>
+          <span class="grad-text">Built to Last.</span>
+        </h1>
+
+        <p style="font-size:1.1rem;color:#b0b0b0;max-width:560px;line-height:1.75;margin-bottom:40px;">
+          Akpaloo Metal Works delivers precision welding, custom fabrication, and durable steel solutions for homes, businesses, and industrial projects across Ghana — crafted with skill, built with pride.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <button class="btn-primary" onclick="navigate('contact')">
+            <i class="fas fa-paper-plane"></i> Get a Quote
+          </button>
+          <a class="btn-whatsapp" href="https://wa.me/[WHATSAPP_NUMBER]?text=Hello%20Akpaloo%20Metal%20Works%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- Quick stats bar -->
+        <div class="flex flex-wrap gap-6 mt-14 pt-10" style="border-top:1px solid rgba(255,255,255,0.1);">
+          <div>
+            <div style="font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;color:var(--gold);">100%</div>
+            <div style="font-size:0.78rem;color:#777;letter-spacing:0.08em;text-transform:uppercase;">Quality Focused</div>
+          </div>
+          <div style="width:1px;background:rgba(255,255,255,0.1);"></div>
+          <div>
+            <div style="font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;color:var(--gold);">8+</div>
+            <div style="font-size:0.78rem;color:#777;letter-spacing:0.08em;text-transform:uppercase;">Service Types</div>
+          </div>
+          <div style="width:1px;background:rgba(255,255,255,0.1);"></div>
+          <div>
+            <div style="font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;color:var(--gold);">Custom</div>
+            <div style="font-size:0.78rem;color:#777;letter-spacing:0.08em;text-transform:uppercase;">Every Project</div>
+          </div>
+          <div style="width:1px;background:rgba(255,255,255,0.1);"></div>
+          <div>
+            <div style="font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;color:var(--gold);">Ghana</div>
+            <div style="font-size:0.78rem;color:#777;letter-spacing:0.08em;text-transform:uppercase;">Based & Trusted</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div style="position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2;">
+      <span style="font-size:0.68rem;letter-spacing:0.14em;color:#666;text-transform:uppercase;">Scroll</span>
+      <div style="width:1px;height:40px;background:linear-gradient(to bottom,#666,transparent);animation:scrollLine 1.6s ease-in-out infinite;"></div>
+    </div>
+    <style>@keyframes scrollLine{0%,100%{opacity:1;transform:scaleY(1)}50%{opacity:0.4;transform:scaleY(0.6)}}</style>
+  </section>
+
+  <!-- MARQUEE BAND -->
+  <div style="background:#111;border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;padding:14px 0;overflow:hidden;">
+    <div class="marquee-track" id="marquee">
+      <span style="color:#555;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;">
+        Welding &amp; Fabrication &nbsp;·&nbsp; Custom Gates &nbsp;·&nbsp; Security Grilles &nbsp;·&nbsp; Steel Frames &nbsp;·&nbsp; Railings &amp; Balustrades &nbsp;·&nbsp; Roofing Structures &nbsp;·&nbsp; Repairs &amp; Maintenance &nbsp;·&nbsp; Custom Metal Works &nbsp;·&nbsp;
+      </span>
+      <span style="color:#555;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;" aria-hidden="true">
+        Welding &amp; Fabrication &nbsp;·&nbsp; Custom Gates &nbsp;·&nbsp; Security Grilles &nbsp;·&nbsp; Steel Frames &nbsp;·&nbsp; Railings &amp; Balustrades &nbsp;·&nbsp; Roofing Structures &nbsp;·&nbsp; Repairs &amp; Maintenance &nbsp;·&nbsp; Custom Metal Works &nbsp;·&nbsp;
+      </span>
+    </div>
+  </div>
+
+  <!-- FEATURED SERVICES -->
+  <section class="section-pad metal-texture" style="background:#111;">
+    <div class="container">
+      <div class="text-center mb-12 reveal">
+        <div class="section-label justify-center"><i class="fas fa-wrench"></i> What We Do</div>
+        <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Our <span class="grad-text">Core Services</span></h2>
+        <p style="color:#888;max-width:520px;margin:0 auto;line-height:1.7;">From precision welding to large-scale steel structures — we handle it all with expert craftsmanship and attention to detail.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div class="service-card p-6 reveal cursor-pointer" onclick="navigate('services')" style="transition-delay:0.05s">
+          <div class="card-icon mb-4"><i class="fas fa-fire-flame-curved"></i></div>
+          <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;">Welding & Fabrication</h3>
+          <p style="color:#888;font-size:0.875rem;line-height:1.65;">MIG, TIG and arc welding with precise metalwork fabricated to your exact specifications.</p>
+          <div style="margin-top:16px;color:var(--gold);font-size:0.8rem;font-weight:600;display:flex;align-items:center;gap:6px;">Learn More <i class="fas fa-arrow-right"></i></div>
+        </div>
+
+        <div class="service-card p-6 reveal cursor-pointer" onclick="navigate('services')" style="transition-delay:0.1s">
+          <div class="card-icon mb-4"><i class="fas fa-door-open"></i></div>
+          <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;">Gates & Doors</h3>
+          <p style="color:#888;font-size:0.875rem;line-height:1.65;">Elegant and secure custom-designed sliding, swing and pedestrian gates and metal doors.</p>
+          <div style="margin-top:16px;color:var(--gold);font-size:0.8rem;font-weight:600;display:flex;align-items:center;gap:6px;">Learn More <i class="fas fa-arrow-right"></i></div>
+        </div>
+
+        <div class="service-card p-6 reveal cursor-pointer" onclick="navigate('services')" style="transition-delay:0.15s">
+          <div class="card-icon mb-4"><i class="fas fa-shield-halved"></i></div>
+          <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;">Security Grilles</h3>
+          <p style="color:#888;font-size:0.875rem;line-height:1.65;">Heavy-duty window and door grilles that provide maximum security without sacrificing aesthetics.</p>
+          <div style="margin-top:16px;color:var(--gold);font-size:0.8rem;font-weight:600;display:flex;align-items:center;gap:6px;">Learn More <i class="fas fa-arrow-right"></i></div>
+        </div>
+
+        <div class="service-card p-6 reveal cursor-pointer" onclick="navigate('services')" style="transition-delay:0.2s">
+          <div class="card-icon mb-4"><i class="fas fa-layer-group"></i></div>
+          <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;">Railings & Balustrades</h3>
+          <p style="color:#888;font-size:0.875rem;line-height:1.65;">Stylish and structurally sound railings for staircases, balconies and terraces.</p>
+          <div style="margin-top:16px;color:var(--gold);font-size:0.8rem;font-weight:600;display:flex;align-items:center;gap:6px;">Learn More <i class="fas fa-arrow-right"></i></div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-10">
+        <button class="btn-outline" onclick="navigate('services')">
+          View All Services <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section-pad" style="background:var(--charcoal);">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Image side -->
+        <div class="reveal-left">
+          <div style="position:relative;">
+            <div style="border-radius:12px;overflow:hidden;border:1px solid #222;">
+              <img src="https://images.pexels.com/photos/17406672/pexels-photo-17406672.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Expert welder at work" style="width:100%;height:420px;object-fit:cover;" />
+            </div>
+            <!-- Floating card -->
+            <div style="position:absolute;bottom:-24px;right:-20px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:18px 22px;box-shadow:0 20px 50px rgba(0,0,0,0.6);">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:44px;height:44px;border-radius:8px;background:rgba(212,160,23,0.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--gold);">
+                  <i class="fas fa-medal"></i>
+                </div>
+                <div>
+                  <div style="font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;">Quality Guaranteed</div>
+                  <div style="font-size:0.75rem;color:#777;">Every weld, every joint</div>
+                </div>
+              </div>
+            </div>
+            <!-- Top left badge -->
+            <div style="position:absolute;top:-18px;left:20px;background:linear-gradient(135deg,var(--gold),var(--orange));border-radius:6px;padding:10px 16px;">
+              <div style="font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:700;color:#0f0f0f;white-space:nowrap;"><i class="fas fa-fire" style="margin-right:6px;"></i>Expert Craftsmen</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text side -->
+        <div class="reveal-right">
+          <div class="section-label"><i class="fas fa-star"></i> Why Choose Us</div>
+          <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;margin-bottom:20px;line-height:1.2;">
+            Precision, Durability &<br><span class="grad-text">Customer Satisfaction</span>
+          </h2>
+          <p style="color:#888;line-height:1.75;margin-bottom:30px;">
+            At Akpaloo Metal Works, every project is treated with the same level of dedication — whether it's a simple repair or a complex structural build. We take pride in delivering work that stands the test of time.
+          </p>
+
+          <div class="flex flex-col gap-2">
+            <div class="benefit-item">
+              <div class="benefit-check"><i class="fas fa-check"></i></div>
+              <div>
+                <div style="font-weight:700;margin-bottom:4px;">Quality Materials & Craftsmanship</div>
+                <div style="color:#888;font-size:0.875rem;line-height:1.6;">We use only high-grade steel and metals, combined with expert craftsmanship for lasting results.</div>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-check"><i class="fas fa-check"></i></div>
+              <div>
+                <div style="font-weight:700;margin-bottom:4px;">Custom Designs to Your Spec</div>
+                <div style="color:#888;font-size:0.875rem;line-height:1.6;">Every piece is tailored to your exact requirements — no off-the-shelf compromises.</div>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-check"><i class="fas fa-check"></i></div>
+              <div>
+                <div style="font-weight:700;margin-bottom:4px;">Competitive & Transparent Pricing</div>
+                <div style="color:#888;font-size:0.875rem;line-height:1.6;">Fair quotes with no hidden charges — you always know what you're paying for.</div>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-check"><i class="fas fa-check"></i></div>
+              <div>
+                <div style="font-weight:700;margin-bottom:4px;">Reliable & On-Time Delivery</div>
+                <div style="color:#888;font-size:0.875rem;line-height:1.6;">We respect your schedule and work hard to complete projects on time, every time.</div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-primary mt-8" onclick="navigate('about')">
+            Learn More About Us <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="section-pad metal-texture" style="background:#0d0d0d;">
+    <div class="container">
+      <div class="text-center mb-12 reveal">
+        <div class="section-label justify-center"><i class="fas fa-images"></i> Our Work</div>
+        <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Featured <span class="grad-text">Projects</span></h2>
+        <p style="color:#888;max-width:480px;margin:0 auto;line-height:1.7;">A glimpse of the precision and quality that goes into every project we complete.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="gallery-item reveal" style="height:280px;transition-delay:0.05s">
+          <img src="https://images.pexels.com/photos/9119593/pexels-photo-9119593.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=560&w=800" alt="Custom Metal Gate" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Gates & Doors</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Custom Metal Gate</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" style="height:280px;transition-delay:0.1s">
+          <img src="https://images.pexels.com/photos/30711607/pexels-photo-30711607.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=560&w=800" alt="Spiral Railing" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Railings</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Spiral Staircase Balustrade</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" style="height:280px;transition-delay:0.15s">
+          <img src="https://images.pexels.com/photos/2371922/pexels-photo-2371922.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=560&w=800" alt="Steel Frame Structure" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Steel Structures</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Steel Frame Structure</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-10">
+        <button class="btn-outline" onclick="navigate('projects')">
+          View Full Gallery <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section section-pad">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="text-center reveal">
+        <div class="section-label justify-center"><i class="fas fa-bolt"></i> Ready to Start?</div>
+        <h2 style="font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700;margin-bottom:20px;line-height:1.15;">
+          Have a Project in Mind?<br><span class="grad-text">Let's Build It Together.</span>
+        </h2>
+        <p style="color:#888;max-width:520px;margin:0 auto 40px;line-height:1.75;">
+          Contact us today to discuss your requirements and get a detailed quote. Our team is ready to deliver a metalwork solution that exceeds your expectations.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <button class="btn-primary" onclick="navigate('contact')">
+            <i class="fas fa-paper-plane"></i> Get a Quote
+          </button>
+          <a class="btn-whatsapp" href="https://wa.me/[WHATSAPP_NUMBER]?text=Hello%20Akpaloo%20Metal%20Works%2C%20I%20have%20a%20project%20I%20would%20like%20to%20discuss." target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp Us Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-home -->
+
+
+<!-- ══════════════════════════════════════════
+     PAGE: ABOUT
+════════════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <!-- Page Header -->
+  <div style="padding-top:120px;padding-bottom:60px;background:linear-gradient(135deg,#0d0d0d 0%,#141414 100%);border-bottom:1px solid #1e1e1e;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;right:0;width:500px;height:500px;background:radial-gradient(circle,rgba(212,160,23,0.04) 0%,transparent 70%);pointer-events:none;"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="section-label"><i class="fas fa-building"></i> About Us</div>
+      <h1 style="font-size:clamp(2.5rem,5vw,4rem);font-weight:700;margin-bottom:16px;">
+        Who We <span class="grad-text">Are</span>
+      </h1>
+      <p style="color:#888;max-width:580px;line-height:1.75;">
+        A passionate team of skilled metal craftsmen dedicated to delivering exceptional fabrication work across Ghana.
+      </p>
+    </div>
+  </div>
+
+  <section class="section-pad" style="background:var(--charcoal);">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+        <!-- Image -->
+        <div class="reveal-left about-hero-img">
+          <img src="https://images.pexels.com/photos/22717514/pexels-photo-22717514.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=1000" alt="Akpaloo Metal Works - Skilled craftsman welding" style="width:100%;height:480px;object-fit:cover;" />
+          <div style="position:absolute;bottom:24px;left:24px;z-index:2;background:rgba(15,15,15,0.92);border:1px solid rgba(212,160,23,0.3);border-radius:8px;padding:16px 20px;backdrop-filter:blur(8px);">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <i class="fas fa-fire-flame-curved" style="color:var(--gold);font-size:1.3rem;"></i>
+              <div>
+                <div style="font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:#fff;">Expert Welding</div>
+                <div style="font-size:0.75rem;color:#888;">Precision on every join</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="reveal-right">
+          <div class="section-label"><i class="fas fa-info-circle"></i> Our Story</div>
+          <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;margin-bottom:20px;line-height:1.2;">
+            Built on Skill,<br><span class="grad-text">Driven by Quality</span>
+          </h2>
+          <div class="accent-line mb-6"></div>
+          <p style="color:#aaa;line-height:1.8;margin-bottom:16px;">
+            Akpaloo Metal Works is a Ghanaian metal fabrication business founded on a deep commitment to quality craftsmanship, precision engineering, and lasting customer relationships.
+          </p>
+          <p style="color:#aaa;line-height:1.8;margin-bottom:16px;">
+            We specialise in a wide range of metalwork services — from intricate custom designs to heavy-duty structural fabrication. Every project we take on, regardless of size, receives our full skill, attention, and dedication.
+          </p>
+          <p style="color:#aaa;line-height:1.8;">
+            Our team of experienced welders and fabricators work with a variety of metals and techniques, ensuring that every finished product meets the highest standards of durability, safety, and visual appeal.
+          </p>
+        </div>
+      </div>
+
+      <!-- Core Values -->
+      <div class="reveal mb-16">
+        <div class="text-center mb-10">
+          <div class="section-label justify-center"><i class="fas fa-gem"></i> Our Values</div>
+          <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;">What Drives <span class="grad-text">Everything We Do</span></h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div class="card p-6 text-center">
+            <div style="width:60px;height:60px;border-radius:50%;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--gold);margin:0 auto 16px;">
+              <i class="fas fa-award"></i>
+            </div>
+            <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;">Quality</h3>
+            <p style="color:#888;font-size:0.875rem;line-height:1.65;">We never compromise on the quality of our work or the materials we use. Excellence is our baseline.</p>
+          </div>
+          <div class="card p-6 text-center">
+            <div style="width:60px;height:60px;border-radius:50%;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--gold);margin:0 auto 16px;">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;">Precision</h3>
+            <p style="color:#888;font-size:0.875rem;line-height:1.65;">From measurements to welds, precision is built into every step of our fabrication process.</p>
+          </div>
+          <div class="card p-6 text-center">
+            <div style="width:60px;height:60px;border-radius:50%;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--gold);margin:0 auto 16px;">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;">Integrity</h3>
+            <p style="color:#888;font-size:0.875rem;line-height:1.65;">Honest pricing, clear communication, and transparent project updates from start to finish.</p>
+          </div>
+          <div class="card p-6 text-center">
+            <div style="width:60px;height:60px;border-radius:50%;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--gold);margin:0 auto 16px;">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;">Customer First</h3>
+            <p style="color:#888;font-size:0.875rem;line-height:1.65;">Your satisfaction drives us. We listen carefully and work to exceed your expectations every time.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- What Sets Us Apart -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
+        <div>
+          <div class="section-label"><i class="fas fa-star"></i> Our Approach</div>
+          <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;margin-bottom:20px;">How We Deliver <span class="grad-text">Exceptional Work</span></h2>
+          <div class="flex flex-col gap-4">
+            <div style="display:flex;gap:14px;align-items:flex-start;padding:16px;background:#1a1a1a;border-radius:8px;border:1px solid #252525;">
+              <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:rgba(212,160,23,0.15);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--gold);">1</div>
+              <div>
+                <div style="font-weight:700;margin-bottom:4px;">Consultation & Planning</div>
+                <div style="color:#888;font-size:0.875rem;line-height:1.6;">We begin with a thorough discussion of your requirements, site conditions, and design preferences.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;padding:16px;background:#1a1a1a;border-radius:8px;border:1px solid #252525;">
+              <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:rgba(212,160,23,0.15);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--gold);">2</div>
+              <div>
+                <div style="font-weight:700;margin-bottom:4px;">Design & Quotation</div>
+                <div style="color:#888;font-size:0.875rem;line-height:1.6;">We prepare a detailed design concept and a transparent, itemised quote for your approval.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;padding:16px;background:#1a1a1a;border-radius:8px;border:1px solid #252525;">
+              <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:rgba(212,160,23,0.15);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--gold);">3</div>
+              <div>
+                <div style="font-weight:700;margin-bottom:4px;">Fabrication & Quality Check</div>
+                <div style="color:#888;font-size:0.875rem;line-height:1.6;">Skilled craftsmen fabricate your project with precision, with quality inspections at every stage.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;padding:16px;background:#1a1a1a;border-radius:8px;border:1px solid #252525;">
+              <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:rgba(212,160,23,0.15);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--gold);">4</div>
+              <div>
+                <div style="font-weight:700;margin-bottom:4px;">Installation & Handover</div>
+                <div style="color:#888;font-size:0.875rem;line-height:1.6;">We professionally install your metalwork and ensure you are completely satisfied before handover.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #222;">
+          <img src="https://images.pexels.com/photos/13296053/pexels-photo-13296053.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Precision metalwork in progress" style="width:100%;height:420px;object-fit:cover;" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About CTA -->
+  <section class="cta-section section-pad">
+    <div class="container" style="position:relative;z-index:1;text-align:center;">
+      <h2 style="font-size:clamp(1.8rem,4vw,3rem);font-weight:700;margin-bottom:16px;">
+        Ready to Work With Us?
+      </h2>
+      <p style="color:#888;max-width:480px;margin:0 auto 36px;line-height:1.75;">Get in touch today for a consultation and quote on your metalwork project.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <button class="btn-primary" onclick="navigate('contact')"><i class="fas fa-paper-plane"></i> Request a Quote</button>
+        <button class="btn-outline" onclick="navigate('services')">View Our Services <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </section>
+</div><!-- /page-about -->
+
+
+<!-- ══════════════════════════════════════════
+     PAGE: SERVICES
+════════════════════════════════════════════ -->
+<div id="page-services" class="page">
+  <!-- Header -->
+  <div style="padding-top:120px;padding-bottom:60px;background:linear-gradient(135deg,#0d0d0d 0%,#141414 100%);border-bottom:1px solid #1e1e1e;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;right:0;width:500px;height:500px;background:radial-gradient(circle,rgba(212,160,23,0.04) 0%,transparent 70%);pointer-events:none;"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="section-label"><i class="fas fa-tools"></i> What We Offer</div>
+      <h1 style="font-size:clamp(2.5rem,5vw,4rem);font-weight:700;margin-bottom:16px;">Our <span class="grad-text">Services</span></h1>
+      <p style="color:#888;max-width:560px;line-height:1.75;">From precision welding to large-scale steel structures — comprehensive metalwork solutions for residential, commercial and industrial clients.</p>
+    </div>
+  </div>
+
+  <section class="section-pad" style="background:var(--charcoal);">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Service 1 -->
+        <div class="service-card p-7 reveal" style="transition-delay:0.05s">
+          <div style="height:200px;border-radius:8px;overflow:hidden;margin-bottom:24px;">
+            <img src="https://images.pexels.com/photos/5846282/pexels-photo-5846282.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=700" alt="Welding & Metal Fabrication" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div class="card-icon mb-4"><i class="fas fa-fire-flame-curved"></i></div>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:10px;">Welding & Metal Fabrication</h3>
+          <p style="color:#888;line-height:1.7;margin-bottom:16px;">Professional MIG, TIG, and arc welding services for all types of metalwork. We fabricate structural components, enclosures, frames, brackets and complex assemblies with precision and care.</p>
+          <ul style="color:#888;font-size:0.875rem;list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:20px;">
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> MIG, TIG & Arc Welding</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Structural Fabrication</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Custom Metal Components</li>
+          </ul>
+          <button class="btn-primary w-full justify-center" onclick="navigate('contact')" style="font-size:0.82rem;padding:11px;">Get a Quote <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card p-7 reveal" style="transition-delay:0.1s">
+          <div style="height:200px;border-radius:8px;overflow:hidden;margin-bottom:24px;">
+            <img src="https://images.pexels.com/photos/9119593/pexels-photo-9119593.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=700" alt="Gates & Doors" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div class="card-icon mb-4"><i class="fas fa-door-open"></i></div>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:10px;">Gates & Doors</h3>
+          <p style="color:#888;line-height:1.7;margin-bottom:16px;">Custom-designed and fabricated metal gates and doors for residential and commercial properties. From elegant sliding gates to heavy-duty security doors — made to enhance your property's security and appearance.</p>
+          <ul style="color:#888;font-size:0.875rem;list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:20px;">
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Sliding & Swing Gates</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Pedestrian Gates</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Security Metal Doors</li>
+          </ul>
+          <button class="btn-primary w-full justify-center" onclick="navigate('contact')" style="font-size:0.82rem;padding:11px;">Get a Quote <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card p-7 reveal" style="transition-delay:0.15s">
+          <div style="height:200px;border-radius:8px;overflow:hidden;margin-bottom:24px;">
+            <img src="https://images.pexels.com/photos/6673302/pexels-photo-6673302.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=700" alt="Security Grilles" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div class="card-icon mb-4"><i class="fas fa-shield-halved"></i></div>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:10px;">Security Grilles</h3>
+          <p style="color:#888;line-height:1.7;margin-bottom:16px;">Heavy-duty steel window and door grilles that provide robust security while maintaining an attractive appearance. Designed to deter intruders without compromising ventilation or natural light.</p>
+          <ul style="color:#888;font-size:0.875rem;list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:20px;">
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Window Security Grilles</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Door Grilles & Burglar Bars</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Custom Decorative Grilles</li>
+          </ul>
+          <button class="btn-primary w-full justify-center" onclick="navigate('contact')" style="font-size:0.82rem;padding:11px;">Get a Quote <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card p-7 reveal" style="transition-delay:0.05s">
+          <div style="height:200px;border-radius:8px;overflow:hidden;margin-bottom:24px;">
+            <img src="https://images.pexels.com/photos/35588324/pexels-photo-35588324.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=700" alt="Railings & Balustrades" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div class="card-icon mb-4"><i class="fas fa-layer-group"></i></div>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:10px;">Railings & Balustrades</h3>
+          <p style="color:#888;line-height:1.7;margin-bottom:16px;">Beautifully crafted and structurally sound railings for staircases, balconies, terraces and walkways. We combine safety engineering with elegant design to complement any architectural style.</p>
+          <ul style="color:#888;font-size:0.875rem;list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:20px;">
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Staircase Railings</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Balcony Balustrades</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Handrails & Guardrails</li>
+          </ul>
+          <button class="btn-primary w-full justify-center" onclick="navigate('contact')" style="font-size:0.82rem;padding:11px;">Get a Quote <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card p-7 reveal" style="transition-delay:0.1s">
+          <div style="height:200px;border-radius:8px;overflow:hidden;margin-bottom:24px;">
+            <img src="https://images.pexels.com/photos/2371922/pexels-photo-2371922.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=700" alt="Roofing & Steel Structures" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div class="card-icon mb-4"><i class="fas fa-warehouse"></i></div>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:10px;">Roofing & Steel Structures</h3>
+          <p style="color:#888;line-height:1.7;margin-bottom:16px;">Design and fabrication of steel roof trusses, purlins, canopies, carports and structural steel frameworks. Built to withstand Ghana's climate and engineered for long-term structural integrity.</p>
+          <ul style="color:#888;font-size:0.875rem;list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:20px;">
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Steel Roof Trusses</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Canopies & Carports</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Structural Steel Frames</li>
+          </ul>
+          <button class="btn-primary w-full justify-center" onclick="navigate('contact')" style="font-size:0.82rem;padding:11px;">Get a Quote <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card p-7 reveal" style="transition-delay:0.15s">
+          <div style="height:200px;border-radius:8px;overflow:hidden;margin-bottom:24px;">
+            <img src="https://images.pexels.com/photos/35380331/pexels-photo-35380331.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=700" alt="Custom Metal Works" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div class="card-icon mb-4"><i class="fas fa-drafting-compass"></i></div>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:10px;">Custom Metal Works</h3>
+          <p style="color:#888;line-height:1.7;margin-bottom:16px;">Have a unique idea or specific design in mind? We bring your concepts to life through bespoke metalwork — decorative pieces, signage frames, furniture frames, display stands and more.</p>
+          <ul style="color:#888;font-size:0.875rem;list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:20px;">
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Bespoke Metal Designs</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Decorative Metalwork</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Furniture & Display Frames</li>
+          </ul>
+          <button class="btn-primary w-full justify-center" onclick="navigate('contact')" style="font-size:0.82rem;padding:11px;">Get a Quote <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="service-card p-7 reveal" style="transition-delay:0.05s">
+          <div style="height:200px;border-radius:8px;overflow:hidden;margin-bottom:24px;">
+            <img src="https://images.pexels.com/photos/3137069/pexels-photo-3137069.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=700" alt="Steel Frames" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div class="card-icon mb-4"><i class="fas fa-border-all"></i></div>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:10px;">Steel Frames</h3>
+          <p style="color:#888;line-height:1.7;margin-bottom:16px;">Precision-fabricated steel window frames, door frames, louvre frames and structural support frames. Built for exact fit, strength and long-lasting performance in all conditions.</p>
+          <ul style="color:#888;font-size:0.875rem;list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:20px;">
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Window & Door Frames</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Louvre Frames</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Structural Support Frames</li>
+          </ul>
+          <button class="btn-primary w-full justify-center" onclick="navigate('contact')" style="font-size:0.82rem;padding:11px;">Get a Quote <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <!-- Service 8 -->
+        <div class="service-card p-7 reveal" style="transition-delay:0.1s">
+          <div style="height:200px;border-radius:8px;overflow:hidden;margin-bottom:24px;">
+            <img src="https://images.pexels.com/photos/29960487/pexels-photo-29960487.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=700" alt="Repairs & Maintenance" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <div class="card-icon mb-4"><i class="fas fa-screwdriver-wrench"></i></div>
+          <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:10px;">Repairs & Maintenance</h3>
+          <p style="color:#888;line-height:1.7;margin-bottom:16px;">Restore and maintain your existing metalwork to peak condition. We repair gates, grilles, railings, structural steel and all types of metal installations quickly, reliably and professionally.</p>
+          <ul style="color:#888;font-size:0.875rem;list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:20px;">
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Gate & Grille Repairs</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Structural Repair & Reinforcement</li>
+            <li style="display:flex;align-items:center;gap:8px;"><i class="fas fa-check" style="color:var(--gold);font-size:0.75rem;"></i> Welding Repairs</li>
+          </ul>
+          <button class="btn-primary w-full justify-center" onclick="navigate('contact')" style="font-size:0.82rem;padding:11px;">Get a Quote <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <!-- CTA Card -->
+        <div class="reveal" style="transition-delay:0.15s">
+          <div style="background:linear-gradient(135deg,rgba(212,160,23,0.12),rgba(224,123,32,0.08));border:1px solid rgba(212,160,23,0.25);border-radius:10px;padding:28px;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
+            <div style="font-size:2rem;color:var(--gold);margin-bottom:16px;"><i class="fas fa-question-circle"></i></div>
+            <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:12px;">Don't See Your Project?</h3>
+            <p style="color:#888;line-height:1.7;margin-bottom:24px;font-size:0.9rem;">We handle a wide range of metalwork projects. If you don't see your specific requirement listed, contact us — we're happy to discuss any metalwork need.</p>
+            <button class="btn-primary" onclick="navigate('contact')" style="font-size:0.82rem;">
+              <i class="fas fa-paper-plane"></i> Contact Us
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services CTA -->
+  <section class="cta-section section-pad">
+    <div class="container" style="position:relative;z-index:1;text-align:center;">
+      <h2 style="font-size:clamp(1.8rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Start Your Project Today</h2>
+      <p style="color:#888;max-width:480px;margin:0 auto 36px;line-height:1.75;">Request a quote and let our team deliver the perfect metalwork solution for your needs.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <button class="btn-primary" onclick="navigate('contact')"><i class="fas fa-paper-plane"></i> Get a Quote</button>
+        <a class="btn-whatsapp" href="https://wa.me/[WHATSAPP_NUMBER]?text=Hello%20Akpaloo%20Metal%20Works%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+</div><!-- /page-services -->
+
+
+<!-- ══════════════════════════════════════════
+     PAGE: PROJECTS
+════════════════════════════════════════════ -->
+<div id="page-projects" class="page">
+  <!-- Header -->
+  <div style="padding-top:120px;padding-bottom:60px;background:linear-gradient(135deg,#0d0d0d 0%,#141414 100%);border-bottom:1px solid #1e1e1e;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;right:0;width:500px;height:500px;background:radial-gradient(circle,rgba(212,160,23,0.04) 0%,transparent 70%);pointer-events:none;"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="section-label"><i class="fas fa-images"></i> Our Portfolio</div>
+      <h1 style="font-size:clamp(2.5rem,5vw,4rem);font-weight:700;margin-bottom:16px;">Project <span class="grad-text">Gallery</span></h1>
+      <p style="color:#888;max-width:560px;line-height:1.75;">Browse our portfolio of completed metalwork projects — each one a testament to our commitment to quality, precision, and craftsmanship.</p>
+    </div>
+  </div>
+
+  <section class="section-pad" style="background:var(--charcoal);">
+    <div class="container">
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap gap-3 mb-10 justify-center reveal">
+        <button class="gallery-filter-btn active" data-filter="all">All Projects</button>
+        <button class="gallery-filter-btn" data-filter="gates">Gates & Doors</button>
+        <button class="gallery-filter-btn" data-filter="railings">Railings</button>
+        <button class="gallery-filter-btn" data-filter="grilles">Security Grilles</button>
+        <button class="gallery-filter-btn" data-filter="structures">Steel Structures</button>
+        <button class="gallery-filter-btn" data-filter="custom">Custom Works</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="gallery-grid">
+
+        <div class="gallery-item reveal" data-category="gates" style="height:300px;transition-delay:0.05s">
+          <img src="https://images.pexels.com/photos/9119593/pexels-photo-9119593.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Ornate Metal Gate" loading="lazy" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;"><i class="fas fa-door-open" style="margin-right:5px;"></i>Gates & Doors</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Ornate Metal Entrance Gate</div>
+              <div style="font-size:0.78rem;color:#ccc;margin-top:4px;">Custom residential gate with decorative metalwork</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="gates" style="height:300px;transition-delay:0.1s">
+          <img src="https://images.pexels.com/photos/2271100/pexels-photo-2271100.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Sliding Metal Gate" loading="lazy" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;"><i class="fas fa-door-open" style="margin-right:5px;"></i>Gates & Doors</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Industrial Sliding Gate Panel</div>
+              <div style="font-size:0.78rem;color:#ccc;margin-top:4px;">Heavy-duty commercial access gate</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="railings" style="height:300px;transition-delay:0.15s">
+          <img src="https://images.pexels.com/photos/30711607/pexels-photo-30711607.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Spiral Railing" loading="lazy" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;"><i class="fas fa-layer-group" style="margin-right:5px;"></i>Railings</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Spiral Staircase Balustrade</div>
+              <div style="font-size:0.78rem;color:#ccc;margin-top:4px;">Premium spiral staircase with metal railings</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="railings" style="height:300px;transition-delay:0.05s">
+          <img src="https://images.pexels.com/photos/35588324/pexels-photo-35588324.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Indoor Railing" loading="lazy" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;"><i class="fas fa-layer-group" style="margin-right:5px;"></i>Railings</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Modern Indoor Balustrade</div>
+              <div style="font-size:0.78rem;color:#ccc;margin-top:4px;">Sleek interior staircase railing system</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="grilles" style="height:300px;transition-delay:0.1s">
+          <img src="https://images.pexels.com/photos/38251356/pexels-photo-38251356.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Security Grilles" loading="lazy" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;"><i class="fas fa-shield-halved" style="margin-right:5px;"></i>Security Grilles</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Window Security Bar System</div>
+              <div style="font-size:0.78rem;color:#ccc;margin-top:4px;">Heavy-duty window protection grilles</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="grilles" style="height:300px;transition-delay:0.15s">
+          <img src="https://images.pexels.com/photos/6673302/pexels-photo-6673302.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Decorative Grille" loading="lazy" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;"><i class="fas fa-shield-halved" style="margin-right:5px;"></i>Security Grilles</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Decorative Security Grille</div>
+              <div style="font-size:0.78rem;color:#ccc;margin-top:4px;">Security meets elegance in this custom design</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="structures" style="height:300px;transition-delay:0.05s">
+          <img src="https://images.pexels.com/photos/2371922/pexels-photo-2371922.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Steel Frame Structure" loading="lazy" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;"><i class="fas fa-warehouse" style="margin-right:5px;"></i>Steel Structures</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Commercial Steel Framework</div>
+              <div style="font-size:0.78rem;color:#ccc;margin-top:4px;">Large-scale structural steel fabrication</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="structures" style="height:300px;transition-delay:0.1s">
+          <img src="https://images.pexels.com/photos/25492368/pexels-photo-25492368.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Metal Roof Structure" loading="lazy" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;"><i class="fas fa-warehouse" style="margin-right:5px;"></i>Steel Structures</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Modern Metal Roof Structure</div>
+              <div style="font-size:0.78rem;color:#ccc;margin-top:4px;">Engineered roofing steel framework</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="custom" style="height:300px;transition-delay:0.15s">
+          <img src="https://images.pexels.com/photos/35380331/pexels-photo-35380331.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Custom Metal Sculpture" loading="lazy" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;"><i class="fas fa-drafting-compass" style="margin-right:5px;"></i>Custom Works</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Bespoke Metal Sculpture</div>
+              <div style="font-size:0.78rem;color:#ccc;margin-top:4px;">Artistic custom metalwork and sculpture</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="custom" style="height:300px;transition-delay:0.05s">
+          <img src="https://images.pexels.com/photos/8221566/pexels-photo-8221566.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Custom Metal Art" loading="lazy" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;"><i class="fas fa-drafting-compass" style="margin-right:5px;"></i>Custom Works</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Geometric Metal Art Piece</div>
+              <div style="font-size:0.78rem;color:#ccc;margin-top:4px;">Architectural decorative steel installation</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="railings" style="height:300px;transition-delay:0.1s">
+          <img src="https://images.pexels.com/photos/19373866/pexels-photo-19373866.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Industrial Staircase" loading="lazy" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;"><i class="fas fa-layer-group" style="margin-right:5px;"></i>Railings</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Industrial Staircase Railing</div>
+              <div style="font-size:0.78rem;color:#ccc;margin-top:4px;">Contemporary metal staircase in commercial space</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="structures" style="height:300px;transition-delay:0.15s">
+          <img src="https://images.pexels.com/photos/3137069/pexels-photo-3137069.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Steel and Glass Structure" loading="lazy" />
+          <div class="gallery-overlay">
+            <div>
+              <div style="color:var(--gold);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;"><i class="fas fa-warehouse" style="margin-right:5px;"></i>Steel Structures</div>
+              <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;">Steel & Glass Roof Frame</div>
+              <div style="font-size:0.78rem;color:#ccc;margin-top:4px;">Architectural steel and glass ceiling structure</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No results message -->
+      <div id="no-results" style="display:none;text-align:center;padding:60px 20px;color:#666;">
+        <i class="fas fa-images" style="font-size:2.5rem;margin-bottom:16px;"></i>
+        <p>No projects found in this category yet.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects CTA -->
+  <section class="cta-section section-pad">
+    <div class="container" style="position:relative;z-index:1;text-align:center;">
+      <h2 style="font-size:clamp(1.8rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Want Results Like These?</h2>
+      <p style="color:#888;max-width:480px;margin:0 auto 36px;line-height:1.75;">Contact us to discuss your project and get a detailed quote from our expert team.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <button class="btn-primary" onclick="navigate('contact')"><i class="fas fa-paper-plane"></i> Request a Quote</button>
+        <a class="btn-whatsapp" href="https://wa.me/[WHATSAPP_NUMBER]?text=Hello%20Akpaloo%20Metal%20Works%2C%20I%20saw%20your%20projects%20gallery%20and%20would%20like%20to%20discuss%20a%20project." target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+</div><!-- /page-projects -->
+
+
+<!-- ══════════════════════════════════════════
+     PAGE: CONTACT
+════════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <!-- Header -->
+  <div style="padding-top:120px;padding-bottom:60px;background:linear-gradient(135deg,#0d0d0d 0%,#141414 100%);border-bottom:1px solid #1e1e1e;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;right:0;width:500px;height:500px;background:radial-gradient(circle,rgba(212,160,23,0.04) 0%,transparent 70%);pointer-events:none;"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="section-label"><i class="fas fa-envelope"></i> Get in Touch</div>
+      <h1 style="font-size:clamp(2.5rem,5vw,4rem);font-weight:700;margin-bottom:16px;">Contact <span class="grad-text">Us</span></h1>
+      <p style="color:#888;max-width:560px;line-height:1.75;">Have a project in mind? We'd love to hear from you. Get in touch for a consultation and quote.</p>
+    </div>
+  </div>
+
+  <section class="section-pad" style="background:var(--charcoal);">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+
+        <!-- Contact Info Column -->
+        <div class="lg:col-span-2">
+          <div class="reveal-left">
+            <h2 style="font-size:1.8rem;font-weight:700;margin-bottom:8px;">Let's Talk</h2>
+            <div class="accent-line mb-6"></div>
+            <p style="color:#888;line-height:1.75;margin-bottom:28px;">Reach out through any of the channels below or fill in the enquiry form. We typically respond promptly during business hours.</p>
+
+            <div class="flex flex-col gap-4 mb-8">
+
+              <div class="contact-info-item">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                <div>
+                  <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Phone</div>
+                  <div style="font-weight:600;">[PHONE NUMBER]</div>
+                  <div style="font-size:0.8rem;color:#777;">Call us directly</div>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                <div>
+                  <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">WhatsApp</div>
+                  <div style="font-weight:600;">[WHATSAPP NUMBER]</div>
+                  <a href="https://wa.me/[WHATSAPP_NUMBER]?text=Hello%20Akpaloo%20Metal%20Works%2C%20I%20would%20like%20to%20get%20a%20quote%20for%20a%20project." target="_blank" style="font-size:0.8rem;color:#25D366;text-decoration:none;">Chat with us on WhatsApp →</a>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Email</div>
+                  <div style="font-weight:600;">[EMAIL]</div>
+                  <div style="font-size:0.8rem;color:#777;">We'll reply promptly</div>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+                <div>
+                  <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Location</div>
+                  <div style="font-weight:600;">[LOCATION]</div>
+                  <div style="font-size:0.8rem;color:#777;">Ghana</div>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                <div>
+                  <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Business Hours</div>
+                  <div style="font-weight:600;">[BUSINESS HOURS]</div>
+                  <div style="font-size:0.8rem;color:#777;">We're here to help</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- WhatsApp CTA card -->
+            <div style="background:linear-gradient(135deg,rgba(37,211,102,0.1),rgba(37,211,102,0.05));border:1px solid rgba(37,211,102,0.25);border-radius:10px;padding:20px;">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+                <i class="fab fa-whatsapp" style="font-size:1.4rem;color:#25D366;"></i>
+                <div style="font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;">Quick Enquiry via WhatsApp</div>
+              </div>
+              <p style="color:#888;font-size:0.85rem;line-height:1.65;margin-bottom:16px;">Get a faster response by messaging us directly on WhatsApp with your project details.</p>
+              <a href="https://wa.me/[WHATSAPP_NUMBER]?text=Hello%20Akpaloo%20Metal%20Works%2C%20I%20would%20like%20to%20enquire%20about%20the%20following%20project%3A%20" target="_blank" class="btn-whatsapp" style="width:100%;justify-content:center;display:flex;">
+                <i class="fab fa-whatsapp"></i> Message on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Column -->
+        <div class="lg:col-span-3">
+          <div class="reveal-right" style="background:#1a1a1a;border:1px solid #252525;border-radius:12px;padding:36px;">
+            <h3 style="font-family:'Rajdhani',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:6px;">Send an Enquiry</h3>
+            <p style="color:#888;font-size:0.875rem;margin-bottom:28px;">Fill in the form below and we'll get back to you with a detailed quote.</p>
+
+            <!-- Success Message -->
+            <div id="form-success" style="background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.3);border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;">
+              <i class="fas fa-check-circle" style="font-size:1.8rem;color:#25D366;margin-bottom:10px;display:block;"></i>
+              <div style="font-weight:700;margin-bottom:4px;">Enquiry Sent!</div>
+              <div style="color:#888;font-size:0.875rem;">Thank you for reaching out. We'll get back to you shortly.</div>
+            </div>
+
+            <form id="contact-form" onsubmit="handleFormSubmit(event)" novalidate>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label style="display:block;font-size:0.8rem;font-weight:600;color:#aaa;margin-bottom:6px;letter-spacing:0.04em;">Full Name *</label>
+                  <input type="text" class="contact-input" placeholder="Your full name" required />
+                </div>
+                <div>
+                  <label style="display:block;font-size:0.8rem;font-weight:600;color:#aaa;margin-bottom:6px;letter-spacing:0.04em;">Phone Number *</label>
+                  <input type="tel" class="contact-input" placeholder="Your phone number" required />
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label style="display:block;font-size:0.8rem;font-weight:600;color:#aaa;margin-bottom:6px;letter-spacing:0.04em;">Email Address</label>
+                <input type="email" class="contact-input" placeholder="your@email.com" />
+              </div>
+
+              <div class="mb-4">
+                <label style="display:block;font-size:0.8rem;font-weight:600;color:#aaa;margin-bottom:6px;letter-spacing:0.04em;">Service Required *</label>
+                <select class="contact-input" required>
+                  <option value="" disabled selected>Select a service...</option>
+                  <option>Welding & Metal Fabrication</option>
+                  <option>Gates & Doors</option>
+                  <option>Security Grilles</option>
+                  <option>Railings & Balustrades</option>
+                  <option>Roofing & Steel Structures</option>
+                  <option>Custom Metal Works</option>
+                  <option>Steel Frames</option>
+                  <option>Repairs & Maintenance</option>
+                  <option>Other / Not Listed</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label style="display:block;font-size:0.8rem;font-weight:600;color:#aaa;margin-bottom:6px;letter-spacing:0.04em;">Location / Area</label>
+                <input type="text" class="contact-input" placeholder="Where is the project located?" />
+              </div>
+
+              <div class="mb-6">
+                <label style="display:block;font-size:0.8rem;font-weight:600;color:#aaa;margin-bottom:6px;letter-spacing:0.04em;">Project Description *</label>
+                <textarea class="contact-input" rows="5" placeholder="Please describe your project — what you need, dimensions if known, preferred materials, timeline, etc." required style="resize:vertical;min-height:120px;"></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary w-full justify-center" style="font-size:0.95rem;padding:15px;">
+                <i class="fas fa-paper-plane"></i> Send Enquiry
+              </button>
+
+              <p style="color:#555;font-size:0.75rem;text-align:center;margin-top:12px;">By submitting this form, you agree to be contacted regarding your enquiry.</p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div><!-- /page-contact -->
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER (appears on all pages)
+════════════════════════════════════════════ -->
+<footer>
+  <div class="container" style="padding-top:60px;padding-bottom:24px;">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-3 mb-4 cursor-pointer" onclick="navigate('home')">
+          <div style="width:38px;height:38px;background:linear-gradient(135deg,#d4a017,#e07b20);border-radius:6px;display:flex;align-items:center;justify-content:center;">
+            <i class="fas fa-tools" style="color:#0f0f0f;font-size:1rem;"></i>
+          </div>
+          <div>
+            <div class="logo-text text-white text-base leading-tight">AKPALOO <span class="logo-accent">METAL</span></div>
+            <div style="font-size:0.56rem;letter-spacing:0.18em;color:#555;font-weight:600;text-transform:uppercase;">Works</div>
+          </div>
+        </div>
+        <p style="color:#666;font-size:0.875rem;line-height:1.7;margin-bottom:16px;">
+          Premium welding and metal fabrication services in Ghana. Quality craftsmanship, built to last.
+        </p>
+        <div style="display:flex;gap:10px;">
+          <a href="#" style="width:34px;height:34px;border-radius:6px;background:#1e1e1e;border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center;color:#888;text-decoration:none;transition:all 0.25s;" onmouseover="this.style.background='rgba(212,160,23,0.15)';this.style.color='#d4a017';this.style.borderColor='rgba(212,160,23,0.3)'" onmouseout="this.style.background='#1e1e1e';this.style.color='#888';this.style.borderColor='#2a2a2a'">
+            <i class="fab fa-facebook-f" style="font-size:0.85rem;"></i>
+          </a>
+          <a href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" style="width:34px;height:34px;border-radius:6px;background:#1e1e1e;border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center;color:#888;text-decoration:none;transition:all 0.25s;" onmouseover="this.style.background='rgba(37,211,102,0.1)';this.style.color='#25D366';this.style.borderColor='rgba(37,211,102,0.25)'" onmouseout="this.style.background='#1e1e1e';this.style.color='#888';this.style.borderColor='#2a2a2a'">
+            <i class="fab fa-whatsapp" style="font-size:0.85rem;"></i>
+          </a>
+          <a href="#" style="width:34px;height:34px;border-radius:6px;background:#1e1e1e;border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center;color:#888;text-decoration:none;transition:all 0.25s;" onmouseover="this.style.background='rgba(212,160,23,0.15)';this.style.color='#d4a017';this.style.borderColor='rgba(212,160,23,0.3)'" onmouseout="this.style.background='#1e1e1e';this.style.color='#888';this.style.borderColor='#2a2a2a'">
+            <i class="fab fa-instagram" style="font-size:0.85rem;"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <div style="font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #1e1e1e;">Quick Links</div>
+        <div class="flex flex-col gap-3">
+          <span class="footer-link" onclick="navigate('home')">Home</span>
+          <span class="footer-link" onclick="navigate('about')">About Us</span>
+          <span class="footer-link" onclick="navigate('services')">Services</span>
+          <span class="footer-link" onclick="navigate('projects')">Projects</span>
+          <span class="footer-link" onclick="navigate('contact')">Contact</span>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <div style="font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #1e1e1e;">Our Services</div>
+        <div class="flex flex-col gap-3">
+          <span class="footer-link" onclick="navigate('services')">Welding & Fabrication</span>
+          <span class="footer-link" onclick="navigate('services')">Gates & Doors</span>
+          <span class="footer-link" onclick="navigate('services')">Security Grilles</span>
+          <span class="footer-link" onclick="navigate('services')">Railings & Balustrades</span>
+          <span class="footer-link" onclick="navigate('services')">Steel Structures</span>
+          <span class="footer-link" onclick="navigate('services')">Repairs & Maintenance</span>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <div style="font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #1e1e1e;">Contact Info</div>
+        <div class="flex flex-col gap-4">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <i class="fas fa-phone" style="color:var(--gold);font-size:0.85rem;margin-top:3px;min-width:14px;"></i>
+            <div>
+              <div style="color:#888;font-size:0.75rem;margin-bottom:2px;">Phone</div>
+              <div style="color:#ccc;font-size:0.875rem;">[PHONE NUMBER]</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <i class="fas fa-envelope" style="color:var(--gold);font-size:0.85rem;margin-top:3px;min-width:14px;"></i>
+            <div>
+              <div style="color:#888;font-size:0.75rem;margin-bottom:2px;">Email</div>
+              <div style="color:#ccc;font-size:0.875rem;">[EMAIL]</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <i class="fas fa-location-dot" style="color:var(--gold);font-size:0.85rem;margin-top:3px;min-width:14px;"></i>
+            <div>
+              <div style="color:#888;font-size:0.75rem;margin-bottom:2px;">Location</div>
+              <div style="color:#ccc;font-size:0.875rem;">[LOCATION], Ghana</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <i class="fas fa-clock" style="color:var(--gold);font-size:0.85rem;margin-top:3px;min-width:14px;"></i>
+            <div>
+              <div style="color:#888;font-size:0.75rem;margin-bottom:2px;">Hours</div>
+              <div style="color:#ccc;font-size:0.875rem;">[BUSINESS HOURS]</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div style="border-top:1px solid #1a1a1a;padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;">
+      <p style="color:#444;font-size:0.8rem;">© 2025 Akpaloo Metal Works. All rights reserved.</p>
+      <p style="color:#333;font-size:0.75rem;">Strong Metalwork. Built to Last.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════
+     FLOATING WHATSAPP BUTTON
+════════════════════════════════════════════ -->
+<a id="float-wa" href="https://wa.me/[WHATSAPP_NUMBER]?text=Hello%20Akpaloo%20Metal%20Works%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank">
+  <i class="fab fa-whatsapp"></i>
+  <span class="wa-tooltip">Chat with us on WhatsApp</span>
+</a>
+
+
+<!-- ══════════════════════════════════════════
+     TOAST NOTIFICATION
+════════════════════════════════════════════ -->
+<div id="toast">
+  <i class="fas fa-check-circle" style="color:#25D366;"></i>
+  <span id="toast-msg">Action completed</span>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+<script>
+  // ── PAGE NAVIGATION ──────────────────────
+  function navigate(page) {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    // Show target page
+    const target = document.getElementById('page-' + page);
+    if (target) {
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // Update nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.toggle('active', link.dataset.page === page);
+    });
+    // Reinit reveal animations for new page content
+    setTimeout(initReveal, 100);
+    setTimeout(initReveal, 400);
+  }
+
+  // ── HAMBURGER MENU ───────────────────────
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close mobile menu on outside click
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('hamburger');
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+    }
+  });
+
+  // ── NAVBAR SCROLL ────────────────────────
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+    // Progress bar
+    const scrollTop = document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    document.getElementById('progress-bar').style.width = pct + '%';
+    // Reveal
+    initReveal();
+  });
+
+  // ── SCROLL REVEAL ANIMATIONS ─────────────
+  function initReveal() {
+    const selectors = '.reveal, .reveal-left, .reveal-right';
+    document.querySelectorAll(selectors).forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.9) {
+        el.classList.add('visible');
+      }
+    });
+  }
+  // Run on load
+  setTimeout(initReveal, 100);
+
+  // ── GALLERY FILTER ───────────────────────
+  document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Update button states
+      document.querySelectorAll('.gallery-filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const filter = this.dataset.filter;
+      const items = document.querySelectorAll('#gallery-grid .gallery-item');
+      let visible = 0;
+
+      items.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+          item.classList.remove('hidden');
+          visible++;
+        } else {
+          item.style.display = 'none';
+          item.classList.add('hidden');
+        }
+      });
+
+      document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+      setTimeout(initReveal, 100);
+    });
+  });
+
+  // ── SPARK PARTICLES ──────────────────────
+  function createSparks() {
+    const container = document.getElementById('sparks');
+    if (!container) return;
+    for (let i = 0; i < 18; i++) {
+      const spark = document.createElement('div');
+      spark.className = 'spark';
+      const x = Math.random() * 50;
+      const y = Math.random() * 100;
+      const dx = (Math.random() - 0.5) * 120 + 'px';
+      const dy = (Math.random() - 0.5) * 120 + 'px';
+      const dur = (Math.random() * 2.5 + 1.5) + 's';
+      const delay = (Math.random() * 4) + 's';
+      spark.style.cssText = `left:${x}%;top:${y}%;--dx:${dx};--dy:${dy};animation-duration:${dur};animation-delay:${delay};`;
+      container.appendChild(spark);
+    }
+  }
+  createSparks();
+
+  // ── FORM SUBMIT ──────────────────────────
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    // Simple validation
+    const required = form.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(field => {
+      if (!field.value.trim()) {
+        valid = false;
+        field.style.borderColor = '#e05050';
+        setTimeout(() => { field.style.borderColor = ''; }, 2500);
+      }
+    });
+    if (!valid) {
+      showToast('Please fill in all required fields.', 'error');
+      return;
+    }
+    // Show success
+    form.style.display = 'none';
+    success.style.display = 'block';
+    showToast('Enquiry sent successfully!', 'success');
+  }
+
+  // ── TOAST ─────────────────────────────────
+  function showToast(msg, type = 'success') {
+    const toast = document.getElementById('toast');
+    const icon = toast.querySelector('i');
+    document.getElementById('toast-msg').textContent = msg;
+    icon.className = type === 'success' ? 'fas fa-check-circle' : 'fas fa-exclamation-circle';
+    icon.style.color = type === 'success' ? '#25D366' : '#e05050';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+
+  // ── MARQUEE DUPLICATION ──────────────────
+  // Already duplicated inline for smooth loop
+
+  // ── INITIAL NAV STATE ────────────────────
+  // Set home as active on load
+  document.querySelectorAll('.nav-link[data-page="home"]').forEach(l => l.classList.add('active'));
+
+  // ── KEYBOARD NAVIGATION ──────────────────
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('hamburger');
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>
